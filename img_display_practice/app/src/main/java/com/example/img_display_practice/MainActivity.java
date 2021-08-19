@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View arg0){
-                image.setImageResource(R.drawable.obama_portrait_crop);
+                image.setImageResource(R.drawable.obama_sad);
             }
         });
     }
