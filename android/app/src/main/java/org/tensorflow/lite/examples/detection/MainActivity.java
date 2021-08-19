@@ -78,8 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TF_OD_API_LABELS_FILE = "file:///android_asset/_darknet.labels";
 
-    private static final String TF_OD_API_IMAGES_FILE = "file:///android_asset/_darknet.labels";
-
+//    private static final String TF_OD_API_IMAGES_FILE = "file:///android_asset/_darknet.labels";
 
     // Minimum detection confidence to track a detection.
     private static final boolean MAINTAIN_ASPECT = false;
