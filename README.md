@@ -24,7 +24,8 @@
 * 이미지를 업로드하고, 가이드라인에 따라 원하는 영역에 blob박스를 표시한 뒤 레이블을 설정합니다. 여러 이미지를 업로드 하여 다양한 레이블을 넣어도 좋습니다.
 * 데이터를 생성하고, export합니다. 이때, *Format : YOLO Darknet*, *show download code* 으로 export하여 받은 코드를 저장해둡니다.
 
-> 2~4는 Mobile_Object_Detection.ipynb에서 진행됩니다. GPU 사용이 있으므로 Google Colab을 사용하는 것을 권장합니다. 학습 이미지 데이터에 따라 장시간 소요될 수 있습니다.
+> * 2~4는 Mobile_Object_Detection.ipynb에서 진행됩니다. GPU 사용이 있으므로 Google Colab을 사용하는 것을 권장합니다. 학습 이미지 데이터에 따라 장시간 소요될 수 있습니다.
+> * 이때 Colab에서 그날 할당 받은 GPU 카드가 Tesla K80일 경우, 이 과정이 원활하지 않을 수 있습니다. Tesla T4 등급 이상의 GPU 카드를 할당받았을 때 진행하기를 권장합니다. (이 때문에 무료 Colab을 사용한다면 어떤 날은 해당 프로젝트를 진행하지 못할 수 있음.)
 ### 2. Yolov4 tiny darknet 학습
 * 레포지토리 복사
 ``` git
