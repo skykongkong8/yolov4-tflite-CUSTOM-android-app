@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final boolean TF_OD_API_IS_QUANTIZED = false;
 
-    private static final String TF_OD_API_MODEL_FILE = "yolov4-tiny-418.tflite";
+    private static final String TF_OD_API_MODEL_FILE = "yolov4-tiny-419.tflite";
 
     private static final String TF_OD_API_LABELS_FILE = "file:///android_asset/_darknet.labels";
 
