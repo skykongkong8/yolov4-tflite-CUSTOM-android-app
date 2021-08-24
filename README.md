@@ -4,12 +4,15 @@
 
 # KOREAN GUIDELINES
 ## Introduction
-> Object Detection을 단순히 분류하자면, 모든 것을 한 번에 처리하는 yolo와 파이프라인을 거쳐서 동작하는 faster-RCNN 등이 있을 것입니다. 때문에 Yolo는 비교적 빠른 속도로 인식이 가능한 대신, 선형적인 모양이나 국부적인 패턴 등을 인식하는 데 한계가 있습니다. 반면 RCNN의 경우 매우 세부적인 형태까지 detecting하는 것이 가능합니다.
-> 이 레포지토리는 tensorflow를 이용하여 darknet을 통해 스스로 학습한 yolo weights로 yolo-v4를 사용해 detecting하는 안드로이드 애플리케이션을 만드는 과정을 다룹니다. 각자 다양한 데이터를 학습시켜 필요에 맞는 애플리케이션을 제작하는데 큰 도움이 되리라 생각합니다.
+> * Object Detection을 단순히 분류하자면, 모든 것을 한 번에 처리하는 yolo와 파이프라인을 거쳐서 동작하는 faster-RCNN 등이 있을 것입니다. 때문에 Yolo는 비교적 빠른 속도로 인식이 가능한 대신, 선형적인 모양이나 국부적인 패턴 등을 인식하는 데 한계가 있습니다. 반면 RCNN의 경우 매우 세부적인 형태까지 detecting하는 것이 가능합니다.
+> * 이 레포지토리는 tensorflow를 이용하여 darknet을 통해 스스로 학습한 yolo weights로 yolo-v4를 사용해 detecting하는 안드로이드 애플리케이션을 만드는 과정을 다룹니다. 각자 다양한 데이터를 학습시켜 필요에 맞는 애플리케이션을 제작하는데 큰 도움이 되리라 생각합니다.
 ### 이 레포지토리를 빌드하여 다음을 얻을 수 있음
 * 자신이 원하는 카테고리의 object detection용 yolo weight
 * 해당 yolo weight와 tensorflow로 작동하는 yolov4 알고리즘 코드
 * 해당 yolo weight을 사용하여 실시간 사물인식을 시행하는 안드로이드 앱
+* 내장되어있는 assets에 다음과 같은 모델들이 현 레포지토리에 올라와있음:
+  * 오바마와 오바마가 아닌 '사람들'을 구분하는 모델 (Obama vs Person)
+  * 전반적인 일상생활의 물건들을 인식하는 yolo 기본 모델 (coco) 
 
 ### Requirements
 > 이 프로젝트를 수행하기 위해서는 다음의 조건이 필요하거나, 권장됩니다.
