@@ -31,6 +31,7 @@ import android.util.Log;
 import android.util.Size;
 import android.util.TypedValue;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.graphics.drawable.Drawable;
 import android.content.res.Resources;
@@ -52,6 +53,11 @@ import org.tensorflow.lite.examples.detection.tracking.MultiBoxTracker;
  * An activity that uses a TensorFlowMultiBoxDetector and ObjectTracker to detect and then track
  * objects.
  */
+
+/**I DON'T KNOW WHAT I'M DOING
+ * java memo : 'extends' == inheritance
+ * */
+
 public class DetectorActivity extends CameraActivity implements OnImageAvailableListener {
     private static final Logger LOGGER = new Logger();
 
@@ -87,6 +93,8 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
     private MultiBoxTracker tracker;
 
     private BorderedText borderedText;
+
+    private ImageView imageView;
 
     @Override
     public void onPreviewSizeChosen(final Size size, final int rotation) {
@@ -224,21 +232,34 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                 /**I DON'T KNOW WHAT I AM DOING*/
                                 /**Resources res = getResources();*/
 
-                                int img_left = (int) location.left;
-                                int img_right = (int) location.right;
-                                int img_top = (int) location.top;
-                                int img_bottom = (int) location.bottom;
+//                                int img_left = (int) location.left;
+//                                int img_right = (int) location.right;
+//                                int img_top = (int) location.top;
+//                                int img_bottom = (int) location.bottom;
 
                                 /**x y w h*/
 
-                                final ImageView mImageView;
-                                mImageView = (ImageView) findViewById(R.id.imageView);
-                                mImageView.layout(img_left, img_top, img_right, img_bottom);
-                                mImageView.setImageResource(R.drawable.ic_launcher);
+//                                final ImageView mImageView;
+//                                mImageView = (ImageView) findViewById(R.id.imageView);
+//                                mImageView.layout(img_left, img_top, img_right, img_bottom);
+//                                mImageView.setImageResource(R.drawable.ic_launcher);
 
                                 /**Drawable d = res.getDrawable(R.drawable.ic_launcher, null);
                                 d.setBounds(img_left, img_top, img_right, img_bottom);
                                 d.draw(canvas);*/
+
+                                /**I DON'T KNOW WHAT I"M DOING*/
+
+                                String img_resource = "R.drawable." + result.getTitle();
+
+                                LinearLayout img_layout = (LinearLayout) findViewById(getLayoutId());
+                            //    ImageView imageView = new ImageView(this);
+                                imageView.setImageResource(0);
+                                img_layout.addView(imageView);
+
+                                imageView.setImageResource(R.drawable.ic_launcher);
+
+
 
 
 
@@ -263,6 +284,8 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                     }
                 });
     }
+
+
 
     @Override
     protected int getLayoutId() {

@@ -29,6 +29,7 @@ import android.media.Image;
 import android.media.Image.Plane;
 import android.media.ImageReader;
 import android.media.ImageReader.OnImageAvailableListener;
+import android.widget.ImageView;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -82,7 +83,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
   protected TextView frameValueTextView, cropValueTextView, inferenceTimeTextView;
   protected ImageView bottomSheetArrowImageView;
-  private ImageView plusImageView, minusImageView;
+  private ImageView plusImageView, minusImageView, imageView;
   private SwitchCompat apiSwitchCompat;
   private TextView threadsTextView;
 
@@ -111,6 +112,8 @@ public abstract class CameraActivity extends AppCompatActivity
     gestureLayout = findViewById(R.id.gesture_layout);
     sheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
     bottomSheetArrowImageView = findViewById(R.id.bottom_sheet_arrow);
+
+
 
     ViewTreeObserver vto = gestureLayout.getViewTreeObserver();
     vto.addOnGlobalLayoutListener(
@@ -540,7 +543,9 @@ public abstract class CameraActivity extends AppCompatActivity
 
   protected abstract void onPreviewSizeChosen(final Size size, final int rotation);
 
-  protected abstract int getLayoutId();
+  protected int getLayoutId(){
+    return R.layout.tfe_od_camera_connection_fragment_tracking;
+  }
 
   protected abstract Size getDesiredPreviewFrameSize();
 
