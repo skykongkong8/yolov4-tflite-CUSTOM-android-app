@@ -32,6 +32,7 @@ import android.util.Size;
 import android.util.TypedValue;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.graphics.drawable.Drawable;
 import android.content.res.Resources;
@@ -131,6 +132,12 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
             toast.show();
             finish();
         }
+
+        /**I DON'T KNOW WHAT I'M DOING*/
+        ImageView imageView = new ImageView(this);
+        imageView.setImageResource(0);
+
+
 
         previewWidth = size.getWidth();
         previewHeight = size.getHeight();
@@ -257,7 +264,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                 imageView.setImageResource(0);
                                 img_layout.addView(imageView);
 
-                                imageView.setImageResource(R.drawable.ic_launcher);
+                                imageView.setImageResource(R.drawable.sample_image);
 
 
 
