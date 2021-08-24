@@ -30,6 +30,7 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.util.Size;
 import android.util.TypedValue;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.graphics.drawable.Drawable;
 import android.content.res.Resources;
@@ -221,16 +222,23 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                 mappedRecognitions.add(result);
 
                                 /**I DON'T KNOW WHAT I AM DOING*/
-                                Resources res = getResources();
+                                /**Resources res = getResources();*/
 
                                 int img_left = (int) location.left;
                                 int img_right = (int) location.right;
                                 int img_top = (int) location.top;
                                 int img_bottom = (int) location.bottom;
 
-                                Drawable d = res.getDrawable(R.drawable.ic_launcher, null);
+                                /**x y w h*/
+
+                                final ImageView mImageView;
+                                mImageView = (ImageView) findViewById(R.id.imageView);
+                                mImageView.layout(img_left, img_top, img_right, img_bottom);
+                                mImageView.setImageResource(R.drawable.ic_launcher);
+
+                                /**Drawable d = res.getDrawable(R.drawable.ic_launcher, null);
                                 d.setBounds(img_left, img_top, img_right, img_bottom);
-                                d.draw(canvas);
+                                d.draw(canvas);*/
 
 
 
