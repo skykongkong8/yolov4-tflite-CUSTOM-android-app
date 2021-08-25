@@ -16,6 +16,8 @@ limitations under the License.
 package org.tensorflow.lite.examples.detection.tracking;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
@@ -30,6 +32,8 @@ import android.util.TypedValue;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+
+import org.tensorflow.lite.examples.detection.R;
 import org.tensorflow.lite.examples.detection.env.BorderedText;
 import org.tensorflow.lite.examples.detection.env.ImageUtils;
 import org.tensorflow.lite.examples.detection.env.Logger;
@@ -154,16 +158,20 @@ public class MultiBoxTracker {
     }
   }
 
-  public synchronized  void drawImage(final Canvas canvas){
-    final boolean rotated = sensorOrientation % 180 == 90;
-    final float muliplier =
-            Math.min(
-                    canvas.getHeight() / (float) (rotated ? frameWidth : frameHeight),
-                    canvas.getWidth() / (float) (rotated ? frameHeight : frameWidth));
-    for (final TrackedRecognition recognition : trackedObjects) {
-      
-    }
-  }
+//  public synchronized  void drawImage(final Canvas canvas){
+//    final boolean rotated = sensorOrientation % 180 == 90;
+//    final float muliplier =
+//            Math.min(
+//                    canvas.getHeight() / (float) (rotated ? frameWidth : frameHeight),
+//                    canvas.getWidth() / (float) (rotated ? frameHeight : frameWidth));
+//    for (final TrackedRecognition recognition : trackedObjects) {
+//      Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
+//      Bitmap dstBitmap = Bitmap.createBitmap(
+//              bitmap.getWidth()
+//      )
+//
+//    }
+//  }
 
   private void processResults(final List<Recognition> results) {
     final List<Pair<Float, Recognition>> rectsToTrack = new LinkedList<Pair<Float, Recognition>>();

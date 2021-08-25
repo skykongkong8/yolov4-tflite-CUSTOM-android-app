@@ -18,6 +18,7 @@ package org.tensorflow.lite.examples.detection;
 
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
@@ -36,6 +37,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.graphics.drawable.Drawable;
 import android.content.res.Resources;
+
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -220,6 +222,26 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                         cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
                         final Canvas canvas = new Canvas(cropCopyBitmap);
                         final Paint paint = new Paint();
+                        int offset = 50;
+
+
+                        paint.setStyle(Paint.Style.FILL);
+                        paint.setAlpha(160);
+
+                        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
+                        Bitmap dstBitmap = Bitmap.createBitmap(
+                                bitmap.getWidth() + offset * 2,
+                                bitmap.getHeight() + offset * 2,
+                                Bitmap.Config.ARGB_8888
+                        );
+
+//                        Canvas imgcanvas new Canvas(dstBitmap);
+                        canvas.drawBitmap(
+                                bitmap,
+                                offset,
+                                offset, paint
+                        );
+
                         paint.setColor(Color.RED);
                         paint.setStyle(Style.STROKE);
                         paint.setStrokeWidth(2.0f);
