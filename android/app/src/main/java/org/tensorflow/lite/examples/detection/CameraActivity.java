@@ -98,6 +98,11 @@ public abstract class CameraActivity extends AppCompatActivity
     setSupportActionBar(toolbar);
     getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+    /**I DON'T KNOW WHAT I AM DOING*/
+//    ImageView imageView = findViewById(R.id.imageView3);
+//    imageView.setImageResource(0);
+//    imageView.setImageResource(R.drawable.ic_launcher);
+
     if (hasPermission()) {
       setFragment();
     } else {

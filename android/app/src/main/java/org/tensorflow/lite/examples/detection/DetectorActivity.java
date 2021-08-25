@@ -59,6 +59,8 @@ import org.tensorflow.lite.examples.detection.tracking.MultiBoxTracker;
  * java memo : 'extends' == inheritance
  * */
 
+
+
 public class DetectorActivity extends CameraActivity implements OnImageAvailableListener {
     private static final Logger LOGGER = new Logger();
 
@@ -134,8 +136,12 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
         }
 
         /**I DON'T KNOW WHAT I'M DOING*/
-        ImageView imageView = new ImageView(this);
-        imageView.setImageResource(0);
+//        ImageView imageView = new ImageView(this);
+//        imageView.setImageResource(R.drawable.sample_image);
+
+
+
+//        LinearLayout linearLayout = (LinearLayout) findViewById(R.layout.tfe_od_activity_camera);
 
 
 
@@ -171,6 +177,8 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                 });
 
         tracker.setFrameConfiguration(previewWidth, previewHeight, sensorOrientation);
+
+
     }
 
     @Override
@@ -257,14 +265,14 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
 
                                 /**I DON'T KNOW WHAT I"M DOING*/
 
-                                String img_resource = "R.drawable." + result.getTitle();
-
-                                LinearLayout img_layout = (LinearLayout) findViewById(getLayoutId());
-                            //    ImageView imageView = new ImageView(this);
-                                imageView.setImageResource(0);
-                                img_layout.addView(imageView);
-
-                                imageView.setImageResource(R.drawable.sample_image);
+//                                String img_resource = "R.drawable." + result.getTitle();
+//
+//                                LinearLayout img_layout = (LinearLayout) findViewById(getLayoutId());
+//                            //    ImageView imageView = new ImageView(this);
+//                                imageView.setImageResource(0);
+//                                img_layout.addView(imageView);
+//
+//                                imageView.setImageResource(R.drawable.sample_image);
 
 
 
@@ -318,5 +326,12 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
     @Override
     protected void setNumThreads(final int numThreads) {
         runInBackground(() -> detector.setNumThreads(numThreads));
+    }
+
+    private static class TrackedRecognition {
+        RectF location;
+        float detectionConfidence;
+        int color;
+        String title;
     }
 }

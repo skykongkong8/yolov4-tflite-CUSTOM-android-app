@@ -45,4 +45,8 @@ public class OverlayView extends View {
   public interface DrawCallback {
     public void drawCallback(final Canvas canvas);
   }
+
+  public interface DrawImageCallback{
+    public void drawImageCallback(final Canvas canvas);
+  }
 }

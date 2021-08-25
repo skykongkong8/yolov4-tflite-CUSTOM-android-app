@@ -154,6 +154,17 @@ public class MultiBoxTracker {
     }
   }
 
+  public synchronized  void drawImage(final Canvas canvas){
+    final boolean rotated = sensorOrientation % 180 == 90;
+    final float muliplier =
+            Math.min(
+                    canvas.getHeight() / (float) (rotated ? frameWidth : frameHeight),
+                    canvas.getWidth() / (float) (rotated ? frameHeight : frameWidth));
+    for (final TrackedRecognition recognition : trackedObjects) {
+      
+    }
+  }
+
   private void processResults(final List<Recognition> results) {
     final List<Pair<Float, Recognition>> rectsToTrack = new LinkedList<Pair<Float, Recognition>>();
 
