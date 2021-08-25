@@ -30,6 +30,10 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
+/**Comment from skykongkong8
+ * This branch is IDENTICAL to open source application from tensorflow demo app using yolov4-tiny
+ * */
+
 public class MainActivity extends AppCompatActivity {
 
     public static final float MINIMUM_CONFIDENCE_TF_OD_API = 0.5f;
