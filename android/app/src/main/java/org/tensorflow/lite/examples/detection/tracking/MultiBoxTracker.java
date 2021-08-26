@@ -144,27 +144,33 @@ public class MultiBoxTracker {
       canvas.drawRoundRect(trackedPos, cornerSize, cornerSize, boxPaint);
 
       final String labelString;
-      final String OBAMA = "obama";
-
-      if (recognition.title.equals(OBAMA)){
-        labelString =
-                !TextUtils.isEmpty(recognition.title)
-                        ? String.format("%s %.2f", recognition.title, (100 * recognition.detectionConfidence))
-                        : String.format("%.2f", (100 * recognition.detectionConfidence));
-        borderedText.drawText(
-                canvas, trackedPos.left + cornerSize, trackedPos.top, labelString + "%", boxPaint);
-
-      }
-
-      else{
-
-        labelString = String.format("");
-        borderedText.drawText(
-                canvas, trackedPos.left + cornerSize, trackedPos.top, labelString, boxPaint);
-
-        Logger logger = new Logger();
-        logger.i("Detected : "+recognition.title);
-      }
+      labelString =
+              !TextUtils.isEmpty(recognition.title)
+                      ? String.format("%s %.2f", recognition.title, (100 * recognition.detectionConfidence))
+                      : String.format("%.2f", (100 * recognition.detectionConfidence));
+      borderedText.drawText(
+              canvas, trackedPos.left + cornerSize, trackedPos.top, labelString + "%", boxPaint);
+//      final String OBAMA = "obama";
+//
+//      if (recognition.title.equals(OBAMA)){
+//        labelString =
+//                !TextUtils.isEmpty(recognition.title)
+//                        ? String.format("%s %.2f", recognition.title, (100 * recognition.detectionConfidence))
+//                        : String.format("%.2f", (100 * recognition.detectionConfidence));
+//        borderedText.drawText(
+//                canvas, trackedPos.left + cornerSize, trackedPos.top, labelString + "%", boxPaint);
+//
+//      }
+//
+//      else{
+//
+//        labelString = String.format("");
+//        borderedText.drawText(
+//                canvas, trackedPos.left + cornerSize, trackedPos.top, labelString, boxPaint);
+//
+//        Logger logger = new Logger();
+//        logger.i("Detected : "+recognition.title);
+//      }
 
       //            borderedText.drawText(canvas, trackedPos.left + cornerSize, trackedPos.top,
       // labelString);
