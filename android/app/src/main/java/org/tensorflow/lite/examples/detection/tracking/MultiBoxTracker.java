@@ -143,16 +143,55 @@ public class MultiBoxTracker {
       float cornerSize = Math.min(trackedPos.width(), trackedPos.height()) / 8.0f;
       canvas.drawRoundRect(trackedPos, cornerSize, cornerSize, boxPaint);
 
-      final String labelString =
-          !TextUtils.isEmpty(recognition.title)
-              ? String.format("%s %.2f", recognition.title, (100 * recognition.detectionConfidence))
-              : String.format("%.2f", (100 * recognition.detectionConfidence));
-      //            borderedText.drawText(canvas, trackedPos.left + cornerSize, trackedPos.top,
-      // labelString);
-      borderedText.drawText(
-          canvas, trackedPos.left + cornerSize, trackedPos.top, labelString + "%", boxPaint);
+
+      final String labelString;
+      if ((!TextUtils.isEmpty(recognition.title))) {
+        if ((recognition.title == "obama")) {
+          labelString = String.format("%s %.2f", recognition.title, (100 * recognition.detectionConfidence));
+          borderedText.drawText(
+                  canvas, trackedPos.left + cornerSize, trackedPos.top, labelString + "%", boxPaint);
+        }
+        else {
+//        labelString =String.format("%.2f", (100 * recognition.detectionConfidence));
+
+          labelString = String.format("");
+          borderedText.drawText(
+                  canvas, trackedPos.left + cornerSize, trackedPos.top, labelString, boxPaint);
+
+
+        }
+      }
+      else{
+        if ((recognition.title == "obama")) {
+          labelString = String.format("%s %.2f", recognition.title, (100 * recognition.detectionConfidence));
+          borderedText.drawText(
+                  canvas, trackedPos.left + cornerSize, trackedPos.top, labelString + "%", boxPaint);
+        }
+        else {
+//        labelString =String.format("%.2f", (100 * recognition.detectionConfidence));
+
+          labelString =String.format("");
+          borderedText.drawText(
+                  canvas, trackedPos.left + cornerSize, trackedPos.top, labelString, boxPaint);
+
+        }
+      }
+      if (!TextUtils.isEmpty(recognition.title)){
+        final String titleString = String.format("%s", recognition.title);
+//        print(titleString);
+        Logger logger = new Logger();
+        logger.i("Detected" + titleString);
+      }
+
+
+//      borderedText.drawText(
+//          canvas, trackedPos.left + cornerSize, trackedPos.top, labelString + "%", boxPaint);
     }
   }
+
+//  private void print(String string) {
+//    print(string);
+//  }
 
   private void processResults(final List<Recognition> results) {
     final List<Pair<Float, Recognition>> rectsToTrack = new LinkedList<Pair<Float, Recognition>>();
